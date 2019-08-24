@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const Approved = new mongoose.Schema({
+const aprovalSchema = new mongoose.Schema({
   aprovado: {
     type: Boolean,
     default: false
   }
 });
 
-const Photo = new mongoose.Schema({
+const photoSchema = new mongoose.Schema({
   documento: {
     type: String,
     required: [true, 'Document is required'],
@@ -21,7 +21,7 @@ const Photo = new mongoose.Schema({
   }
 });
 
-const model = mongoose.model('User', {
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -79,4 +79,14 @@ const model = mongoose.model('User', {
   approved: Approved
 });
 
-module.exports = model;
+
+mongoose.model('User', userSchema);
+module.exports = mongoose.model('User');
+
+
+mongoose.model('Photo', photoSchema);
+module.exports = mongoose.model('Photo');
+
+
+mongoose.model('Aproval', aprovalSchema);
+module.exports = mongoose.model('Aproval');
