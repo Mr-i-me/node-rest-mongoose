@@ -61,26 +61,26 @@ functions:
           method: get
           cors: true
 
-  createAproval:
-    handler: handler.user.createAproval
+  createApproval:
+    handler: handler.user.createApproval
     events:
       - http:
-          path: user/{id}/aproval
+          path: user/{id}/approval
           method: post
           cors: true
 
-  updateAproval:
-    handler: handler.user.updateAproval
+  updateApproval:
+    handler: handler.user.updateApproval
     events:
       - http:
-          path: user/{id}/aproval/{id}
+          path: user/{id}/approval/{id}
           method: put
           cors: true
 
-  aproval:
-    handler: handler.user.aproval
+  approval:
+    handler: handler.user.approval
     events:
       - http:
-          path: user/{id}/aproval/{id}
+          path: user/{id}/approval/{id}
           method: get
           cors: true
