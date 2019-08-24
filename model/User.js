@@ -11,12 +11,12 @@ const model = mongoose.model('User', {
       },
     },
   },
-  firstname: {
+  email: {
     type: String,
     required: true,
     validate: {
-      validator(firstname) {
-        return validator.isAlphanumeric(firstname);
+      validator(email) {
+        return validator.isAlphanumeric(email);
       },
     },
   },
