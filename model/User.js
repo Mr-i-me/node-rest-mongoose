@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const aprovalSchema = new mongoose.Schema({
+const approvalSchema = new mongoose.Schema({
   aprovado: {
     type: Boolean,
     default: false
@@ -88,5 +88,5 @@ mongoose.model('Photo', photoSchema);
 module.exports = mongoose.model('Photo');
 
 
-mongoose.model('Aproval', aprovalSchema);
-module.exports = mongoose.model('Aproval');
+mongoose.model('Approval', approvalSchema);
+module.exports = mongoose.model('Approval');
