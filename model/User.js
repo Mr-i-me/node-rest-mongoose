@@ -75,8 +75,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: ""
   },
-  photo: Photo,
-  approved: Approved
+  photo: photoSchema,
+  approval: approvalSchema
 });
 
 

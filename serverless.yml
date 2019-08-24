@@ -37,68 +37,48 @@ functions:
           method: get
           cors: true
 
-
-
-functions:
   createPhoto:
-    handler: handler.createPhoto
+    handler: handler.user.createPhoto
     events:
       - http:
           path: user/{id}/photo
           method: post
           cors: true
 
-  updateUser:
-    handler: handler.updateUser
+  updatePhoto:
+    handler: handler.user.updatePhoto
     events:
       - http:
           path: user/{id}/photo/{id}
           method: put
           cors: true
 
-  # deleteUser:
-  #   handler: handler.deleteUser
-  #   events:
-  #     - http:
-  #         path: user/{id}
-  #         method: delete
-  #         cors: true
-
-  user:
-    handler: handler.user
+  photo:
+    handler: handler.user.photo
     events:
       - http:
           path: user/{id}/photo/{id}
           method: get
           cors: true
 
-functions:
   createAproval:
-    handler: handler.createAproval
+    handler: handler.user.createAproval
     events:
       - http:
           path: user/{id}/aproval
           method: post
           cors: true
 
-  updateUser:
-    handler: handler.updateUser
+  updateAproval:
+    handler: handler.user.updateAproval
     events:
       - http:
           path: user/{id}/aproval/{id}
           method: put
           cors: true
 
-  # deleteUser:
-  #   handler: handler.deleteUser
-  #   events:
-  #     - http:
-  #         path: user/{id}
-  #         method: delete
-  #         cors: true
-
-  user:
-    handler: handler.user
+  aproval:
+    handler: handler.user.aproval
     events:
       - http:
           path: user/{id}/aproval/{id}
