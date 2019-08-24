@@ -1,6 +1,26 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
+const Approved = new mongoose.Schema({
+  aprovado: {
+    type: Boolean,
+    default: false
+  }
+});
+
+const Photo = new mongoose.Schema({
+  documento: {
+    type: String,
+    required: [true, 'Document is required'],
+  },
+  comprovanteRenda: {
+    type: String
+  },
+  imovelPhotos: {
+    type: String
+  }
+});
+
 const model = mongoose.model('User', {
   name: {
     type: String,
@@ -30,24 +50,33 @@ const model = mongoose.model('User', {
       },
     },
   },
-  valorEmprestimo: {
+  emprestimo: {
     type: Number,
     required: true,
     validate: {
-      validator(valorEmprestimo) {
-        return validator.isAlphanumeric(valorEmprestimo);
+      validator(emprestimo) {
+        return validator.isAlphanumeric(emprestimo);
       },
     },
   },
-  ip: {
+  renda: {
+    type: Number,
+    default: 0
+  },
+  birth: {
+    type: Date,
+    default: Date.now
+  },
+  estadoCivil: {
+    type: ['solteiro(a)', 'casado(a)', 'divorciado(a)'],
+    default: undefined
+  },
+  address: {
     type: String,
-    required: true,
-    validate: {
-      validator(ip) {
-        return validator.isIP(ip);
-      },
-    },
+    default: ""
   },
+  photo: Photo,
+  approved: Approved
 });
 
 module.exports = model;

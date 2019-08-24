@@ -39,10 +39,14 @@ module.exports.createUser = (event, context, callback) => {
 
   const user = new UserModel({
     name: data.name,
-    firstname: data.firstname,
+    email: data.email,
+    cpf: data.cpf,
+    emprestimo: data.emprestimo,
+    renda: data.renda,
     birth: data.birth,
-    city: data.city,
-    ip: event.requestContext.identity.sourceIp,
+    estadoCivil: data.estadoCivil,
+    address: data.address,
+    photos: data.photo
   });
 
   if (user.validateSync()) {
