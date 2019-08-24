@@ -20,16 +20,22 @@ const model = mongoose.model('User', {
       },
     },
   },
-  birth: {
-    type: Date,
-    required: true,
-  },
-  city: {
+  cpf: {
     type: String,
     required: true,
+    unique: true,
     validate: {
-      validator(city) {
-        return validator.isAlphanumeric(city);
+      validator(cpf) {
+        return validator.isAlphanumeric(cpf);
+      },
+    },
+  },
+  valorEmprestimo: {
+    type: Number,
+    required: true,
+    validate: {
+      validator(valorEmprestimo) {
+        return validator.isAlphanumeric(valorEmprestimo);
       },
     },
   },
