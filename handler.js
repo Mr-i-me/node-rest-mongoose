@@ -37,7 +37,7 @@ module.exports.user = (event, context, callback) => {
 module.exports.createUser = (event, context, callback) => {
   const data = JSON.parse(event.body);
 
-  const user = new UserModel({
+  const user = new UserModel( {
     name: data.name,
     email: data.email,
     cpf: data.cpf,
@@ -91,10 +91,14 @@ module.exports.updateUser = (event, context, callback) => {
   const user = new UserModel({
     _id: id,
     name: data.name,
-    firstname: data.firstname,
+    email: data.email,
+    cpf: data.cpf,
+    emprestimo: data.emprestimo,
+    renda: data.renda,
     birth: data.birth,
-    city: data.city,
-    ip: event.requestContext.identity.sourceIp,
+    estadoCivil: data.estadoCivil,
+    address: data.address,
+    photos: data.photo
   });
 
   if (user.validateSync()) {
