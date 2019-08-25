@@ -1,24 +1,12 @@
 <!--
-title: TODO
-description: This example demonstrate how to use MongoDB with AWS and Serverless.
+title: Contract_API
+description: AWS serverless Rest api using Mongoose ODM and Bluebird for Promises.c
 layout: Doc
 framework: v1
 platform: AWS
 language: nodeJS
-authorLink: 'https://github.com/lucianopf'
-authorName: 'Luciano Pellacani Franca'
-authorAvatar: 'https://avatars2.githubusercontent.com/u/8251208?v=4&s=140'
+authorName: 'Lucas Reis Souza'
 -->
-
-# Serverless MongoDB Rest API with Mongoose and Bluebird Promises
-
-This example demonstrate how to use a MongoDB database with aws and serverless.
-
-Using Mongoose ODM and Bluebird for Promises.
-
-## Use Cases
-
-- NoSQL CRUD API
 
 ## Setup
 
@@ -29,17 +17,17 @@ serverless deploy
 
 ## Usage
 
-In `handler.js` update the `mongoString` with your mongoDB url.
-
 *Create*
 
 ```bash
 curl -XPOST -H "Content-type: application/json" -d '{
-   "name" : "John",
-   "firstname" : "Doe",
-   "city" : "Toronto",
-   "birth" : "01/01/1990"
-}' 'https://2c8cx5whk0.execute-api.us-east-1.amazonaws.com/dev/user/'
+"name" : "alfredo",
+"email"  : "alfredo@alfredo.com",
+"cpf" : "709.256.231-50",
+"emprestimo" : "5000",
+"renda" : "5",
+"birth" : "10/08/1994"
+}' 'http://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user'
 ```
 ```json
 {"id": "590b52ff086041000142cedd"}
@@ -55,35 +43,18 @@ curl -XGET -H "Content-type: application/json" 'https://2c8cx5whk0.execute-api.u
   {
     "_id": "5905e2fbdb55f20001334b3e",
     "name": "John",
-    "firstname": "Doe",
-    "birth": null,
-    "city": "Toronto",
-    "ip": "01/01/1990",
-    "__v": 0
   }
 ]
 ```
 
-*UPDATE*
-
-```bash
-curl -XPUT -H "Content-type: application/json" -d '{
-   "name" : "William",
-   "firstname" : "Smith",
-   "city" : "Miami",
-   "birth" : "01/01/2000"
-}' 'https://2c8cx5whk0.execute-api.us-east-1.amazonaws.com/dev/user/590b52ff086041000142cedd'
-```
-```json
-"Ok"
-```
-
-*DELETE*
-
-```bash
-curl -XDELETE -H "Content-type: application/json" 'https://2c8cx5whk0.execute-api.us-east-1.amazonaws.com/dev/user/590b52ff086041000142cedd'
-```
-
-```json
-"Ok"
-```
+endpoints:
+-  POST - https://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user
+- PUT - https://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user/{id}
+-  DELETE - https://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user/{id}
+-  GET - https://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user/{id}
+-  POST - https://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user/{id}/photo
+-  PUT - https://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user/{id}/photo/{_id}
+-  GET - https://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user/{id}/photo/{_id}
+-  POST - https://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user/{id}/approval
+-  PUT - https://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user/{id}/approval/{_id}
+-  GET - https://ecyv81stok.execute-api.us-east-1.amazonaws.com/dev/user/{id}/approval/{_id}
