@@ -62,7 +62,7 @@ functions:
           cors: true
 
   createApproval:
-    handler: handler.createApproval
+    handler: handler.createUserApproval
     events:
       - http:
           path: user/{id}/approval
