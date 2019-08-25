@@ -37,12 +37,8 @@ functions:
           method: get
           cors: true
 
-<<<<<<< HEAD
-functions:
-=======
->>>>>>> 2b01f2f28e7c12c53a177f09a5d10ea1c22c0ce3
   createPhoto:
-    handler: handler.user.createPhoto
+    handler: handler.createPhoto
     events:
       - http:
           path: user/{id}/photo
@@ -50,34 +46,23 @@ functions:
           cors: true
 
   updatePhoto:
-<<<<<<< HEAD
     handler: handler.updatePhoto
-=======
-    handler: handler.user.updatePhoto
->>>>>>> 2b01f2f28e7c12c53a177f09a5d10ea1c22c0ce3
     events:
       - http:
-          path: user/{id}/photo/{id}
+          path: user/{id}/photo/{_id}
           method: put
           cors: true
 
-<<<<<<< HEAD
-  user:
-    handler: handler.user
-=======
   photo:
-    handler: handler.user.photo
->>>>>>> 2b01f2f28e7c12c53a177f09a5d10ea1c22c0ce3
+    handler: handler.photo
     events:
       - http:
-          path: user/{id}/photo/{id}
+          path: user/{id}/photo/{_id}
           method: get
           cors: true
-<<<<<<< HEAD
-=======
 
   createApproval:
-    handler: handler.user.createApproval
+    handler: handler.createApproval
     events:
       - http:
           path: user/{id}/approval
@@ -85,18 +70,17 @@ functions:
           cors: true
 
   updateApproval:
-    handler: handler.user.updateApproval
+    handler: handler.updateApproval
     events:
       - http:
-          path: user/{id}/approval/{id}
+          path: user/{id}/approval/{_id}
           method: put
           cors: true
 
   approval:
-    handler: handler.user.approval
+    handler: handler.approval
     events:
       - http:
-          path: user/{id}/approval/{id}
+          path: user/{id}/approval/{_id}
           method: get
           cors: true
->>>>>>> 2b01f2f28e7c12c53a177f09a5d10ea1c22c0ce3
